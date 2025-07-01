@@ -8,7 +8,7 @@ const jsonLocalStorage = {
   setItem: (key, value) => {
     console.log('localStorage.setItem() 실행');
 
-    localStorage.setItem(count, JSON.stringify(value))
+    localStorage.setItem("count", JSON.stringify(value))
   },
   getItem: (key) => {
     console.log('localStorage.getItem() 실행');
