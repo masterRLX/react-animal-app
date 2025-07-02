@@ -6,6 +6,7 @@ import MainCard from './components/MainCard';
 import Favorites from './components/Favorites';
 
 export default App;
+const OPEN_API_DOMAIN = 'https://cataas.com';
 
 const jsonLocalStorage = {
   setItem: (key, value) => {
@@ -18,14 +19,20 @@ const jsonLocalStorage = {
     return JSON.parse(localStorage.getItem(key))
   },
 };
+//Open API ///////////////////////////////
+const fetchCat = async (text) => {
+  console.log('fetcheCat() 함수 실행');
+
+
+  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?json=true`);
+  const responseJson = await response.json();
+  return responseJson.url;
+};
 
 function App() {
   console.log('** APP 실행 **');
-  const animal01 = '/img/bear.png';
-  const animal02 = '/img/elephant.png';
 
-
-  const [mainAnimal, setMainAnimal] = React.useState(animal01);
+  const [mainAnimal, setMainAnimal] = React.useState(`${OPEN_API_DOMAIN}/cat`);
   const [favorites, setFavorites]
     = React.useState(() => {
       return jsonLocalStorage.getItem('favorites') || [];
@@ -46,8 +53,10 @@ function App() {
     });
   }
 
-  function updateMainAnimal() {
-    setMainAnimal(animal02);
+  async function updateMainAnimal() {
+    const newCat = await fetchCat('text');
+    setMainAnimal(newCat)
+
     incrementCount();
   }
 
