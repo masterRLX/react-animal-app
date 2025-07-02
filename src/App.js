@@ -21,10 +21,9 @@ const jsonLocalStorage = {
 
 function App() {
   console.log('** APP 실행 **');
-  const animal01 = process.env.PUBLIC_URL + '/img/bear.png';
-  const animal02 = process.env.PUBLIC_URL + '/img/elephant.png';
-  const animal03 = process.env.PUBLIC_URL + '/img/fox.png';
-  const animal04 = process.env.PUBLIC_URL + '/img/rabbit.png';
+  const animal01 = '/img/bear.png';
+  const animal02 = '/img/elephant.png';
+
 
   const [mainAnimal, setMainAnimal] = React.useState(animal01);
   const [favorites, setFavorites]
@@ -69,7 +68,7 @@ function App() {
 
   return (
     <div>
-      <PageTitle>{count} 페이지 🌲</PageTitle>
+      <PageTitle>🦝 {count} 페이지 🌲</PageTitle>
       <AnimalForm updateMainAnimal={updateMainAnimal} />
       <MainCard
         src={mainAnimal}
