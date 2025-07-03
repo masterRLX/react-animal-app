@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
@@ -12,41 +13,6 @@ code {
     monospace;
 }
 
-body {
 
-  text-align: center;
-}
 
-form {
-  margin-bottom: 20px;
-}
 
-.main-card .main-image {
-  width: 400px;
-  height: 400px;
-  object-fit: contain;
-  border: 1px solid;
-}
-
-.main-card button {
-  position: relative;
-  left: -50px;
-  top: -16px;
-}
-
-.favorites {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.favorites li {
-  list-style: none;
-}
-
-.favorites img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-}
